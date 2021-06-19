@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/feedFragment">
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.sc941737.socialmediaapp.modules.feed.FeedFragment"
+        android:label="@string/title_fragment_feed"
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.sc941737.socialmediaapp.modules.post.PostFragment"
+        android:label="@string/title_fragment_post"
+        tools:layout="@layout/fragment_post" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.sc941737.socialmediaapp.modules.profile.ProfileFragment"
+        android:label="@string/title_fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

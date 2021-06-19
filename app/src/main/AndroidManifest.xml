@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialMediaApp">
-        <activity android:name=".modules.main.MainActivity"/>
+        <activity android:name=".modules.main.MainActivity"
+            android:theme="@style/Theme.SocialMediaApp.NoActionBar"/>
         <activity android:name=".modules.splash.SplashActivity"
             android:theme="@style/Theme.SocialMediaApp.Launcher">
             <intent-filter>
