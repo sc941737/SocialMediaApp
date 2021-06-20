@@ -12,7 +12,8 @@
         <activity android:name=".modules.main.MainActivity"
             android:theme="@style/Theme.SocialMediaApp.NoActionBar"/>
         <activity android:name=".modules.splash.SplashActivity"
-            android:theme="@style/Theme.SocialMediaApp.Launcher">
+            android:theme="@style/Theme.SocialMediaApp.Launcher"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

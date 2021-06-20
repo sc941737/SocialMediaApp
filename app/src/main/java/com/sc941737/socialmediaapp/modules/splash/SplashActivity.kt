@@ -13,6 +13,7 @@ class SplashActivity : AppCompatActivity() {
         runBlocking {
             sleep(3000)
             startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+            finish()
         }
     }
 }

@@ -1,15 +1,16 @@
 package com.sc941737.socialmediaapp.modules.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
-import com.sc941737.socialmediaapp.R
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import android.view.View
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.sc941737.socialmediaapp.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,6 +35,13 @@ class MainActivity : AppCompatActivity() {
             val shouldHideToolbar = destination.id in fragmentsWithoutToolbar
             toolbar.visibility = if (shouldHideToolbar) View.GONE else View.VISIBLE
         }
-        navController.navigate(R.id.feedFragment)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onBackPressed() {
+        moveTaskToBack(true)
     }
 }

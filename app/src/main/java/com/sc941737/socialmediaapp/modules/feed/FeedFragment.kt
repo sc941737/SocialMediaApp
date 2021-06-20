@@ -20,5 +20,6 @@ class FeedFragment : BaseBindingFragment<FragmentFeedBinding>(R.layout.fragment_
         super.onCreateView(inflater, container, savedInstanceState)
         binding.fragment = this
         binding.viewModel = viewModel
-        return binding.root    }
+        return binding.root
+    }
 }
