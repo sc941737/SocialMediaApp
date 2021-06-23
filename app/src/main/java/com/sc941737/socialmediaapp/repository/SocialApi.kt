@@ -21,10 +21,10 @@ interface SocialApi {
     @GET(USERS)
     suspend fun fetchUserOfId(
         @Query(ID) id:Long
-    ):Response<User>
+    ):Response<UserResponse>
 
     @GET(POSTS)
-    suspend fun fetchAllPosts():Response<List<Post>>
+    suspend fun fetchAllPosts():Response<List<PostResponse>>
 
     @GET(COMMENTS)
     suspend fun fetchAllCommentsForPost(
@@ -34,7 +34,7 @@ interface SocialApi {
     @GET(ALBUMS)
     suspend fun fetchAllAlbumsForUser(
         @Query(USER_ID) userId:Long
-    ):Response<List<Album>>
+    ):Response<List<AlbumResponse>>
 
     @GET(PHOTOS)
     suspend fun fetchAllPhotosForAlbum(

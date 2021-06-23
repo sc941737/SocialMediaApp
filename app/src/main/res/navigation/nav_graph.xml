@@ -19,9 +19,9 @@
     </fragment>
     <fragment
         android:id="@+id/postFragment"
-        android:name="com.sc941737.socialmediaapp.modules.post.PostFragment"
+        android:name="com.sc941737.socialmediaapp.modules.comments.CommentsFragment"
         android:label="@string/title_fragment_post"
-        tools:layout="@layout/fragment_post" >
+        tools:layout="@layout/fragment_comments" >
         <action
             android:id="@+id/action_postFragment_to_profileFragment"
             app:destination="@id/profileFragment" />

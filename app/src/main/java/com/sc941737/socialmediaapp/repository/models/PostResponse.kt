@@ -1,8 +1,7 @@
 package com.sc941737.socialmediaapp.repository.models
 
-data class Post (
+data class PostResponse(
     val userId:Long,
-    val authorName:String,
     val id:Long,
     val title:String,
     val body:String

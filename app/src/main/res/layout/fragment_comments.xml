@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
     <data>
-        <variable name="viewModel" type="com.sc941737.socialmediaapp.modules.post.PostViewModel" />
-        <variable name="fragment" type="com.sc941737.socialmediaapp.modules.post.PostFragment" />
+        <variable name="viewModel" type="com.sc941737.socialmediaapp.modules.comments.CommentsViewModel" />
+        <variable name="fragment" type="com.sc941737.socialmediaapp.modules.comments.CommentsFragment" />
     </data>
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".modules.post.PostFragment">
+        tools:context=".modules.comments.CommentsFragment">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
