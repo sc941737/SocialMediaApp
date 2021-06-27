@@ -11,7 +11,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         runBlocking {
-            sleep(3000)
+            sleep(1000)
             startActivity(Intent(this@SplashActivity, MainActivity::class.java))
             finish()
         }

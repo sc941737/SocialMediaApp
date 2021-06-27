@@ -6,4 +6,12 @@ data class Post (
     val id:Long,
     val title:String,
     val body:String
-)
+){
+    constructor(postResponse: PostResponse, userResponse: UserResponse) : this(
+        userId = postResponse.userId,
+        authorName = userResponse.name,
+        id = postResponse.id,
+        title = postResponse.title,
+        body = postResponse.body
+    )
+}

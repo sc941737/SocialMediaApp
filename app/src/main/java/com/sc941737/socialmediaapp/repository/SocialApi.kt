@@ -23,6 +23,9 @@ interface SocialApi {
         @Query(ID) id:Long
     ):Response<UserResponse>
 
+    @GET(USERS)
+    suspend fun fetchAllUsers():Response<List<UserResponse>>
+
     @GET(POSTS)
     suspend fun fetchAllPosts():Response<List<PostResponse>>
 
