@@ -22,7 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Placeholder title" />
+            tools:text="@string/placeholder_title" />
 
         <TextView
             android:id="@+id/tvAuthor"
@@ -34,11 +34,11 @@
             app:layout_constraintEnd_toEndOf="@+id/tvTitle"
             app:layout_constraintStart_toStartOf="@+id/tvTitle"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-            tools:text="Placeholder author" />
+            tools:text="@string/placeholder_author" />
 
         <TextView
             android:id="@+id/tvBody"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/match_constraints"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/default_margin"
             android:textSize="@dimen/body_font_size"
@@ -47,6 +47,6 @@
             app:layout_constraintEnd_toEndOf="@+id/tvTitle"
             app:layout_constraintStart_toStartOf="@+id/tvTitle"
             app:layout_constraintTop_toBottomOf="@+id/tvAuthor"
-            tools:text="Placeholder body" />
+            tools:text="@string/placeholder_body" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

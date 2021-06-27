@@ -13,8 +13,10 @@ import com.sc941737.socialmediaapp.base.BaseBindingFragment
 import com.sc941737.socialmediaapp.databinding.FragmentFeedBinding
 import com.sc941737.socialmediaapp.di.DaggerAppComponent
 import com.sc941737.socialmediaapp.modules.main.MainViewModel
+import com.sc941737.socialmediaapp.repository.models.Post
+import com.sc941737.socialmediaapp.util.notImplemented
 
-class FeedFragment : BaseBindingFragment<FragmentFeedBinding>(R.layout.fragment_feed) {
+class FeedFragment : BaseBindingFragment<FragmentFeedBinding>(R.layout.fragment_feed), FeedAdapter.PostItemListener {
 
     private val viewModel: FeedViewModel by viewModels()
     private val sharedViewModel: MainViewModel by activityViewModels()
@@ -43,8 +45,18 @@ class FeedFragment : BaseBindingFragment<FragmentFeedBinding>(R.layout.fragment_
         binding.rvPosts.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = FeedAdapter(requireContext())
+            (adapter as FeedAdapter).itemListener = this@FeedFragment
             setHasFixedSize(true)
             setItemViewCacheSize(25)
         }
+    }
+
+    override fun onClickLike(item: Post) {
+        view?.notImplemented()
+    }
+
+    override fun onClickComments(item: Post) {
+        val action = FeedFragmentDirections.actionFeedFragmentToCommentsFragment(item.id)
+        navigate(action)
     }
 }

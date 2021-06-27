@@ -1,6 +1,5 @@
 package com.sc941737.socialmediaapp.di
 
-import android.content.Context
 import com.sc941737.socialmediaapp.repository.SocialApi
 import com.sc941737.socialmediaapp.util.BASE_URL
 import dagger.Module
@@ -13,7 +12,7 @@ import javax.inject.Singleton
 class NetworkModule {
     @Provides
     @Singleton
-    fun provideSocialApi(context: Context):SocialApi =
+    fun provideSocialApi():SocialApi =
         Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)

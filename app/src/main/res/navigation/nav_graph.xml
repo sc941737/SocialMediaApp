@@ -11,17 +11,20 @@
         android:label="@string/title_fragment_feed"
         tools:layout="@layout/fragment_feed" >
         <action
-            android:id="@+id/action_feedFragment_to_postFragment"
-            app:destination="@id/postFragment" />
+            android:id="@+id/action_feedFragment_to_commentsFragment"
+            app:destination="@id/commentsFragment" />
         <action
             android:id="@+id/action_feedFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
     <fragment
-        android:id="@+id/postFragment"
+        android:id="@+id/commentsFragment"
         android:name="com.sc941737.socialmediaapp.modules.comments.CommentsFragment"
-        android:label="@string/title_fragment_post"
+        android:label="@string/title_fragment_comments"
         tools:layout="@layout/fragment_comments" >
+        <argument
+            android:name="postId"
+            app:argType="long" />
         <action
             android:id="@+id/action_postFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
@@ -29,10 +32,17 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.sc941737.socialmediaapp.modules.profile.ProfileFragment"
-        android:label="@string/title_fragment_profile"
+        android:label="{userName}"
         tools:layout="@layout/fragment_profile" >
         <action
-            android:id="@+id/action_profileFragment_to_postFragment"
-            app:destination="@id/postFragment" />
+            android:id="@+id/action_profileFragment_to_commentsFragment"
+            app:destination="@id/commentsFragment" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+        <argument
+            android:name="userId"
+            app:argType="long" />
+
     </fragment>
 </navigation>
