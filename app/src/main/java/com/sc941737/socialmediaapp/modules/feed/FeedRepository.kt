@@ -7,6 +7,7 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class FeedRepository @Inject constructor(private val api:SocialApi) {
+    // todo: persistence with Room
     suspend fun getAllPosts(): Response<List<PostResponse>> = api.fetchAllPosts()
     suspend fun getAllUsers(): Response<List<UserResponse>> = api.fetchAllUsers()
 }

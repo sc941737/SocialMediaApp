@@ -18,9 +18,8 @@ class PostUseCase @Inject constructor(private val repository: FeedRepository) {
             val response = repository.getAllUsers()
             return@async response.body()
         }.await()
-        if (posts != null && users != null) {
-            for (post in posts) {
-                val author:UserResponse = users.first { user -> user.id == post.userId }
+        posts?.forEach{ post ->
+            users?.first { user -> user.id == post.userId }?.also { author ->
                 val postWithAuthor = Post(post, author)
                 postsWithAuthors.add(postWithAuthor)
             }

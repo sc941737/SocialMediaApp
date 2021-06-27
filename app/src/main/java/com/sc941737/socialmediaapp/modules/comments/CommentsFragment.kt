@@ -14,11 +14,9 @@ import com.sc941737.socialmediaapp.base.BaseBindingFragment
 import com.sc941737.socialmediaapp.databinding.FragmentCommentsBinding
 import com.sc941737.socialmediaapp.di.DaggerAppComponent
 import com.sc941737.socialmediaapp.modules.main.MainViewModel
-import com.sc941737.socialmediaapp.repository.models.Comment
 import com.sc941737.socialmediaapp.util.notImplemented
 
-class CommentsFragment : BaseBindingFragment<FragmentCommentsBinding>(R.layout.fragment_comments),
-    CommentsAdapter.CommentItemListener {
+class CommentsFragment : BaseBindingFragment<FragmentCommentsBinding>(R.layout.fragment_comments) {
 
     private val viewModel: CommentsViewModel by viewModels()
     private val sharedViewModel: MainViewModel by activityViewModels()
@@ -49,7 +47,6 @@ class CommentsFragment : BaseBindingFragment<FragmentCommentsBinding>(R.layout.f
         binding.rvComments.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = CommentsAdapter(requireContext())
-            (adapter as CommentsAdapter).itemListener = this@CommentsFragment
             setHasFixedSize(true)
             setItemViewCacheSize(25)
         }
@@ -57,10 +54,5 @@ class CommentsFragment : BaseBindingFragment<FragmentCommentsBinding>(R.layout.f
 
     fun onClickAddComment(){
         view?.notImplemented()
-    }
-
-    override fun onClickAuthor(item: Comment) {
-//        val action = CommentsFragmentDirections.actionPostFragmentToProfileFragment(item.authorName, item.userId)
-//        navigate(action)
     }
 }

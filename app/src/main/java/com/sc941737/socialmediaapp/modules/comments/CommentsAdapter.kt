@@ -6,18 +6,15 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
-import com.sc941737.socialmediaapp.BR
 import com.sc941737.socialmediaapp.R
 import com.sc941737.socialmediaapp.base.BaseViewHolder
 import com.sc941737.socialmediaapp.repository.models.Comment
-import java.lang.IllegalArgumentException
 
 class CommentsAdapter (context: Context): ListAdapter<Comment, BaseViewHolder<*>>(CommentDiffCallback()) {
     private val layoutInflater = LayoutInflater.from(context)
-    lateinit var itemListener: CommentItemListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-        return CommentViewHolder(DataBindingUtil.inflate(layoutInflater, R.layout.item_comment, parent, false), itemListener)
+        return CommentViewHolder(DataBindingUtil.inflate(layoutInflater, R.layout.item_comment, parent, false))
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
@@ -29,14 +26,5 @@ class CommentsAdapter (context: Context): ListAdapter<Comment, BaseViewHolder<*>
         }
     }
 
-    inner class CommentViewHolder(private val binding: ViewDataBinding, private val listener: CommentItemListener) : BaseViewHolder<Comment>(binding){
-        override fun bind(item: Comment) {
-            super.bind(item)
-            binding.setVariable(BR.listener, listener)
-        }
-    }
-
-    interface CommentItemListener {
-        fun onClickAuthor(item:Comment)
-    }
+    inner class CommentViewHolder(binding: ViewDataBinding) : BaseViewHolder<Comment>(binding)
 }

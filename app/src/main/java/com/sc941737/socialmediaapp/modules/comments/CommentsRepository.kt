@@ -6,5 +6,6 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class CommentsRepository @Inject constructor(private val api:SocialApi) {
+    // todo: persistence with Room
     suspend fun getAllCommentsForPost(postId: Long): Response<List<Comment>> = api.fetchAllCommentsForPost(postId)
 }
