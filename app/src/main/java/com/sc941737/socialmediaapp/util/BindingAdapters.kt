@@ -9,7 +9,7 @@ import com.sc941737.socialmediaapp.R
 object BindingAdapters {
 
     @JvmStatic @BindingAdapter("imageUrl")
-    fun setAvatar(view: ImageView, url: Uri?){
+    fun setImage(view: ImageView, url: Uri?){
         if (url == null) return
         view.alpha = 1f
         Glide.with(view.context).load(url)

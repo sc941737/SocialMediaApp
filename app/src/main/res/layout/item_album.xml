@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="item" type="com.sc941737.socialmediaapp.repository.models.Album" />
+        <variable name="listener" type="com.sc941737.socialmediaapp.modules.profile.ProfileAdapter.AlbumItemListener" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/half_default_margin">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="@dimen/match_constraints"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimaryVariant"
+            android:text="@{item.title}"
+            android:onClick="@{() -> listener.onClickAlbum(item)}"
+            android:textSize="@dimen/body_font_size"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginVertical="@dimen/half_default_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:layout_width="@dimen/match_constraints"
+            android:layout_height="@dimen/line"
+            android:src="?attr/colorPrimaryVariant"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="@id/tvTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvTitle" />
+    
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

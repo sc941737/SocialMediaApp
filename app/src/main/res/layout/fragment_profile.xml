@@ -1,18 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="viewModel" type="com.sc941737.socialmediaapp.modules.profile.ProfileViewModel" />
         <variable name="fragment" type="com.sc941737.socialmediaapp.modules.profile.ProfileFragment" />
     </data>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutProfile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".modules.profile.Profile">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+        tools:context=".modules.profile.ProfileFragment" >
 
-    </FrameLayout>
+        <TextView
+            android:id="@+id/tvRealNameValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.user.name}"
+            android:textSize="@dimen/body_font_size"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:layout_marginHorizontal="@dimen/half_default_margin"
+            app:layout_constraintStart_toEndOf="@+id/tvRealName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRealName"
+            app:layout_constraintTop_toTopOf="@+id/tvRealName"
+            tools:text="@string/placeholder_title"/>
+
+        <TextView
+            android:id="@+id/tvUserNameValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.user.username}"
+            android:textSize="@dimen/body_font_size"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:layout_marginHorizontal="@dimen/half_default_margin"
+            app:layout_constraintStart_toEndOf="@+id/tvUserName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvUserName"
+            app:layout_constraintTop_toTopOf="@+id/tvUserName"
+            tools:text="@string/placeholder_title"/>
+
+        <TextView
+            android:id="@+id/tvUserEmailValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.user.email}"
+            android:textSize="@dimen/body_font_size"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:layout_marginHorizontal="@dimen/half_default_margin"
+            app:layout_constraintBottom_toBottomOf="@+id/tvUserEmail"
+            app:layout_constraintStart_toEndOf="@+id/tvUserEmail"
+            app:layout_constraintTop_toTopOf="@+id/tvUserEmail"
+            tools:text="@string/placeholder_title"/>
+
+        <TextView
+            android:id="@+id/tvRealName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_field_name"
+            android:textColor="?attr/colorPrimaryVariant"
+            android:textStyle="bold"
+            android:textSize="@dimen/body_font_size"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginStart="@dimen/default_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_field_username"
+            android:textColor="?attr/colorPrimaryVariant"
+            android:textStyle="bold"
+            android:textSize="@dimen/body_font_size"
+            app:layout_constraintStart_toStartOf="@+id/tvRealName"
+            app:layout_constraintTop_toBottomOf="@+id/tvRealName" />
+
+        <TextView
+            android:id="@+id/tvUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_field_email"
+            android:textColor="?attr/colorPrimaryVariant"
+            android:textStyle="bold"
+            android:textSize="@dimen/body_font_size"
+            app:layout_constraintStart_toStartOf="@+id/tvUserName"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
+
+        <TextView
+            android:id="@+id/tvAlbumsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimaryVariant"
+            android:text="@string/profile_field_albums"
+            android:textStyle="bold"
+            android:textSize="@dimen/title_font_size"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintTop_toBottomOf="@id/tvUserEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAlbums"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAlbumsTitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="@dimen/default_margin"
+            android:layout_height="@dimen/match_constraints"
+            android:orientation="vertical"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

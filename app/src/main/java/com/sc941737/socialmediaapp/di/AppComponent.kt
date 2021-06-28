@@ -4,6 +4,7 @@ import com.sc941737.socialmediaapp.modules.comments.CommentsViewModel
 import com.sc941737.socialmediaapp.modules.feed.FeedViewModel
 import com.sc941737.socialmediaapp.modules.main.MainActivity
 import com.sc941737.socialmediaapp.modules.main.MainViewModel
+import com.sc941737.socialmediaapp.modules.profile.ProfileViewModel
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -19,4 +20,5 @@ interface AppComponent {
     fun inject(vm: MainViewModel)
     fun inject(viewModel: FeedViewModel)
     fun inject(viewModel: CommentsViewModel)
+    fun inject(viewModel: ProfileViewModel)
 }

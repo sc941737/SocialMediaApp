@@ -31,15 +31,23 @@
         android:name="com.sc941737.socialmediaapp.modules.profile.ProfileFragment"
         android:label="{userName}"
         tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_profileFragment_to_commentsFragment"
-            app:destination="@id/commentsFragment" />
         <argument
             android:name="userName"
             app:argType="string" />
         <argument
             android:name="userId"
             app:argType="long" />
-
+        <action
+            android:id="@+id/action_profileFragment_to_photosFragment"
+            app:destination="@id/photosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="com.sc941737.socialmediaapp.modules.photos.PhotosFragment"
+        android:label="@string/title_fragment_photos"
+        tools:layout="@layout/fragment_photos">
+        <argument
+            android:name="albumId"
+            app:argType="long"/>
     </fragment>
 </navigation>

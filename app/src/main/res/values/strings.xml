@@ -7,7 +7,12 @@
     <string name="title_fragment_comments">Comments</string>
     <string name="title_comments">Comments</string>
     <string name="title_add_comment">Add comment</string>
+    <string name="title_fragment_photos">Photos</string>
     <string name="placeholder_title">Placeholder title</string>
     <string name="placeholder_author">Placeholder author</string>
     <string name="placeholder_body">Placeholder body</string>
+    <string name="profile_field_name">Name:</string>
+    <string name="profile_field_username">Username:</string>
+    <string name="profile_field_email">Email:</string>
+    <string name="profile_field_albums">User Albums</string>
 </resources>

@@ -21,7 +21,7 @@ interface SocialApi {
     @GET(USERS)
     suspend fun fetchUserOfId(
         @Query(ID) id:Long
-    ):Response<UserResponse>
+    ):Response<List<UserResponse>> // Must be a list because the API returns an array.
 
     @GET(USERS)
     suspend fun fetchAllUsers():Response<List<UserResponse>>
@@ -37,7 +37,7 @@ interface SocialApi {
     @GET(ALBUMS)
     suspend fun fetchAllAlbumsForUser(
         @Query(USER_ID) userId:Long
-    ):Response<List<AlbumResponse>>
+    ):Response<List<Album>>
 
     @GET(PHOTOS)
     suspend fun fetchAllPhotosForAlbum(

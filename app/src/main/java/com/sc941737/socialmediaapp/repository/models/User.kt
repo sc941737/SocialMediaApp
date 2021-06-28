@@ -6,4 +6,12 @@ data class User (
     val username:String,
     val email:String,
     val albums:List<Album>
-)
+){
+    constructor(userResponse: UserResponse, albums: List<Album>):this(
+        id = userResponse.id,
+        name = userResponse.name,
+        username = userResponse.username,
+        email = userResponse.email,
+        albums = albums
+    )
+}
