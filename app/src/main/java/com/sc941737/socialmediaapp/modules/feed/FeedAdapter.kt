@@ -43,5 +43,6 @@ class FeedAdapter (context: Context): ListAdapter<Post, BaseViewHolder<*>>(PostD
     interface PostItemListener {
         fun onClickLike(item:Post)
         fun onClickComments(item:Post)
+        fun onClickAuthor(item:Post)
     }
 }

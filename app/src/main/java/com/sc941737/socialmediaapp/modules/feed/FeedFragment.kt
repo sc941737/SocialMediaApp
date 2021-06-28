@@ -59,4 +59,9 @@ class FeedFragment : BaseBindingFragment<FragmentFeedBinding>(R.layout.fragment_
         val action = FeedFragmentDirections.actionFeedFragmentToCommentsFragment(item.id)
         navigate(action)
     }
+
+    override fun onClickAuthor(item: Post) {
+        val action = FeedFragmentDirections.actionFeedFragmentToProfileFragment(item.authorName, item.userId)
+        navigate(action)
+    }
 }

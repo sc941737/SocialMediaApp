@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="item" type="com.sc941737.socialmediaapp.repository.models.Post" />
+        <variable name="listener" type="com.sc941737.socialmediaapp.modules.feed.FeedAdapter.PostItemListener" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -31,6 +32,7 @@
             android:layout_marginTop="@dimen/half_default_margin"
             android:text="@{item.authorName}"
             android:textSize="@dimen/author_font_size"
+            android:onClick="@{() -> listener.onClickAuthor(item)}"
             app:layout_constraintEnd_toEndOf="@+id/tvTitle"
             app:layout_constraintStart_toStartOf="@+id/tvTitle"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle"
